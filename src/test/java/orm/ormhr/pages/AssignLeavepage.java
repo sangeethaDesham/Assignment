@@ -28,6 +28,8 @@ public class AssignLeavepage {
 	public WebElement Assignbtn;
 	@FindBy(how = How.XPATH, using = "//*[@id='assignleave_duration_duration']")
 	public WebElement AssignDuration;
+	@FindBy(how = How.XPATH, using = "//input[@id='confirmOkButton']")
+	public WebElement Confirmation_Btn;
 	
 	
 	public WebDriver driver;
@@ -50,24 +52,22 @@ public class AssignLeavepage {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		AssignLeave_EmpName.sendKeys(EmployeeName);
 		(new Select(AssignLeave_LeaveType)).selectByVisibleText(LeaveType);
-		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		((JavascriptExecutor)driver).executeScript ("document.getElementById('assignleave_txtFromDate').removeAttribute('readonly',0);");
 		WebElement fromDateBox=AssignLeave_FromDate;
 		fromDateBox.clear();
 		fromDateBox.sendKeys(FromDate); 
-		((JavascriptExecutor)driver).executeScript ("document.getElementById('assignleave_txtToDate').removeAttribute('readonly',0);");
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		((JavascriptExecutor)driver).executeScript ("document.getElementById('assignleave_txtToDate').removeAttribute('readonly',0);");		
 		WebElement toDateBox=AssignLeave_ToDate;
 		toDateBox.clear();
 		toDateBox.sendKeys(ToDate); 
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		(new Select(AssignDuration)).selectByVisibleText(Duration);
 		AssignComment.sendKeys(Comment);
 		Assignbtn.click();	
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);  
-		// Switching to Alert        
-		Alert confirmationAlert = driver.switchTo().alert();
-		confirmationAlert.accept();
-   		// Accepting alert		
-        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);        
+		Confirmation_Btn.click();		       
 		}
 	}
 	

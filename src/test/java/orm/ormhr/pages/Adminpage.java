@@ -30,8 +30,9 @@ public class Adminpage {
 	public WebElement Admin_Resetbtn;
 	@FindBy(how = How.XPATH, using ="//*[@id='btnAdd']")
 	public WebElement Admin_Add_btn;
-
-	
+	@FindBy(how =  How.XPATH, using ="//a[text()='linda.anderson']/../preceding-sibling::td/input")
+	public WebElement UserName_Checkbox;
+		
 	public WebDriver driver;
 	
 	public Adminpage(WebDriver driver)

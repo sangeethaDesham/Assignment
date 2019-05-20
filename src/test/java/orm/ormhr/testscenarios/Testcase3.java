@@ -34,7 +34,8 @@ public class Testcase3 extends Base_Class {
 		(new Testcase1()).LoginTest();
 		Adminpage ad = new Adminpage(driver);
 		ad.SearchSystemUsers("linda.anderson","Linda Anderson","ESS","Enabled");
-		ad.SelcetCheckBoxfromResult();	
+		ad.UserName_Checkbox.click();	
+		ad.Admin_Add_btn.click();
 	}
 
 }

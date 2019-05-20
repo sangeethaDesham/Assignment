@@ -11,7 +11,7 @@ public class TestCase4 extends Base_Class {
 	public void SearchAdminUser() throws InterruptedException {
 		(new Testcase1()).LoginTest();
 		AssignLeavepage ap = new AssignLeavepage(driver);
-		ap.AssignLeave("Linda Anderson","Paternity US","2019-05-02","2019-05-02","Full Day","test");
+		ap.AssignLeave("Linda Anderson","Paternity US","2019-05-20","2019-05-20","Full Day","test");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		System.out.println("Leave Assigned Successfully");
 
