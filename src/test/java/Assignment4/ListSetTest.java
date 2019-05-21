@@ -12,7 +12,11 @@ public class ListSetTest extends ListAndSet{
 	s.addVowels("e");
 	Iterator<String> itr = s.iterator();
     while (itr.hasNext()) {
-         System.out.println(itr.next());}
+         System.out.println(itr.next());
+    }	
+	Iterator<String> itr1 = s.iterator1();
+    while (itr1.hasNext()) {
+         System.out.println(itr1.next());}
 	}
 	}
 	

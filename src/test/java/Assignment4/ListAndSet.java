@@ -14,15 +14,22 @@ public class ListAndSet {
 		      Cars.add(car);
 		   }
 
+		   public Iterator<String> iterator() {
+		      return Cars.iterator();
+		}
+
+	
 	HashSet<String> Vowels = new HashSet<String>();
 	   public void addVowels(String vowels1) {
 		   Vowels.add(vowels1);
 		   }
-	   public Iterator<String> iterator() {
-		      return Cars.iterator();
-	   		}
+
+		   public Iterator<String> iterator1()
+		   {
+			return Vowels.iterator();
+		     
 		}	
-  
+  }
 
 
 
